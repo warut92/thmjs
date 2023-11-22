@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@500&display=swap);
+@import 'https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@7/fonts/TlwgTypist/TlwgTypist.css';
+
+body,
+p, li {
+	font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+p, li {
+	font-size: 40px;
+}
+
+red {
+	color: red;
+}
+
+table, th, td {
+	font-size: 96%;
+	font-family: 'Tlwg Typist', monospace;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
