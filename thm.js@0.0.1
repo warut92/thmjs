@@ -16,6 +16,7 @@ for (let i = 0; i < newLineArrLen; i++) {
 HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>\(([^ )]*)\)<\/td><\/tr>/g, '$1<table>');
 HTMLTableOutput = HTMLTableOutput.replace(/ /g, "</td><td>");
 HTMLTableOutput = HTMLTableOutput.replace(/1/g, 'ด');
+HTMLTableOutput = HTMLTableOutput.replace(/%ด/g, '1');
 HTMLTableOutput = HTMLTableOutput.replace(/2/g, 'ร');
 HTMLTableOutput = HTMLTableOutput.replace(/3/g, 'ม');
 HTMLTableOutput = HTMLTableOutput.replace(/4/g, 'ฟ');
@@ -40,13 +41,37 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\+/g, '<span
 //เครื่อหมายโน้ตลบ
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\_/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 50%; transform: translateX(-50%);\">-</sub></span>');
 //เครื่องหมายโน้ตกลาง
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\o/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.6em; left: 50%; transform: translateX(-50%);\">º</sub></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\o/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.6em; left: 50%; transform: translateX(-50%);\"><small>º</small></sub></span>');
 //เครื่องหมายพรม
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\w/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>𝆱</small></sub></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])t/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>𝆱</small></sub></span>');
+//ตัวเลขแสดงตำแหน่งนิ้วซอ
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\([๑๒๓๔๕๖๗๘๙๐ชกน])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๑/g, '<span style="font-size:7px">1</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๒/g, '<span style="font-size:7px">2</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๓/g, '<span style="font-size:7px">3</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๔/g, '<span style="font-size:7px">4</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๕/g, '<span style="font-size:7px">5</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๖/g, '<span style="font-size:7px">6</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๗/g, '<span style="font-size:7px">7</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๘/g, '<span style="font-size:7px">8</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๙/g, '<span style="font-size:7px">9</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/๐/g, '<span style="font-size:7px">0</span>');
+//เครื่องหมายดีดเข้า
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])v/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.3em; left: 50%; transform: translateX(-30%);\">𝆫</span>');
+//เครื่องหมายดีดออก
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ๑๒๓๔๕๖๗๘๙๐])\^/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.9em; left: 40%; transform: translateX(-5%);rotate: -180deg;\">𝆫</span>');
 
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])v/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>v</small></span>');
-
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\^([๑๒๓๔๕๖๗๘๙๐])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.9em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
+//การพิมพ์เลข
+HTMLTableOutput = HTMLTableOutput.replace(/%ด/g, '1');
+HTMLTableOutput = HTMLTableOutput.replace(/%ร/g, '2');
+HTMLTableOutput = HTMLTableOutput.replace(/%ม/g, '3');
+HTMLTableOutput = HTMLTableOutput.replace(/%ฟ/g, '4');
+HTMLTableOutput = HTMLTableOutput.replace(/%ซ/g, '5');
+HTMLTableOutput = HTMLTableOutput.replace(/%ล/g, '6');
+HTMLTableOutput = HTMLTableOutput.replace(/%ท/g, '7');
+HTMLTableOutput = HTMLTableOutput.replace(/%8/g, '8');
+HTMLTableOutput = HTMLTableOutput.replace(/%9/g, '9');
+HTMLTableOutput = HTMLTableOutput.replace(/%0/g, '0');
 
 HTMLTableOutput = HTMLTableOutput.replace(/<tr><td><\/td><\/tr>/g, '<\/table><br><table>');
 
