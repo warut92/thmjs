@@ -44,7 +44,9 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\o/g, '<span
 //เครื่องหมายพรม
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\w/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>𝆱</small></sub></span>');
 
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\^([๑๒๓๔๕๖๗๘๙๐])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.8em; left: 50%; transform: translateX(-50%);\"><small>$2</small></sub></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])v/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>v</small></span>');
+
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\^([๑๒๓๔๕๖๗๘๙๐])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.9em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
 
 HTMLTableOutput = HTMLTableOutput.replace(/<tr><td><\/td><\/tr>/g, '<\/table><br><table>');
 
