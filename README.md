@@ -3,9 +3,7 @@
 JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเองใช้เอง
 
 ตัวอย่าง
-```
-<body>
-  THM.JS 0.0.1 <br>
+  THM.JS 0.0.1
 JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเองใช้เอง
 
 Ex. code [LINK](view-source:https://warut92.github.io/thmjs/)
