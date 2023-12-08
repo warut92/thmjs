@@ -13,7 +13,7 @@ for (let i = 0; i < newLineArrLen; i++) {
   HTMLTableOutput += "<tr><td>" + newLineArr[i] + "</td></tr>" + "\n";
 }
 //replace comma with table tag form
-HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>\(([^ )]*)\)<\/td><\/tr>/g, '$1<table>');
+HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>\(([^ )]*)\)<\/td><\/tr>/g, '<a\sname=\"$1\">$1</a><table>');
 HTMLTableOutput = HTMLTableOutput.replace(/ /g, "</td><td>");
 HTMLTableOutput = HTMLTableOutput.replace(/1/g, 'ด');
 HTMLTableOutput = HTMLTableOutput.replace(/%ด/g, '1');
