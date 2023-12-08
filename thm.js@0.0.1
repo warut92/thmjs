@@ -46,6 +46,14 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\o/g, '<span
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])t/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>𝆱</small></sub></span>');
 //ตัวเลขแสดงตำแหน่งนิ้วซอ
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\([๑๒๓๔๕๖๗๘๙๐ชกน])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
+//ตัวเลขแสดงตำแหน่งนิ้วซอ เลขโรมัน
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>5</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>4</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>3</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(ii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>2</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(i)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>1</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(0)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>0</small></span>');
+//แปลงเลขไทยเป็นอาราบิก
 HTMLTableOutput = HTMLTableOutput.replace(/๑/g, '<span style="font-size:7px">1</span>');
 HTMLTableOutput = HTMLTableOutput.replace(/๒/g, '<span style="font-size:7px">2</span>');
 HTMLTableOutput = HTMLTableOutput.replace(/๓/g, '<span style="font-size:7px">3</span>');
@@ -72,8 +80,12 @@ HTMLTableOutput = HTMLTableOutput.replace(/%ท/g, '7');
 HTMLTableOutput = HTMLTableOutput.replace(/%8/g, '8');
 HTMLTableOutput = HTMLTableOutput.replace(/%9/g, '9');
 HTMLTableOutput = HTMLTableOutput.replace(/%0/g, '0');
+HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, 'END');
+HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>END<\/td><\/tr>/g, '<\/table><div style=\"text-align: right\;font-size:10px">กลับต้น<\/div>');
+// HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, '</table><span style=\"text-align: right\">กลับต้น<\/span>');
 
 HTMLTableOutput = HTMLTableOutput.replace(/<tr><td><\/td><\/tr>/g, '<\/table><br><table>');
+console.log('HTMLTABLEOUTPUT', HTMLTableOutput)
 
 if (HTMLTableOutput !== "<tr><td></td></tr>\n") {
   document.getElementById('thm').innerHTML =
