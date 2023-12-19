@@ -84,7 +84,8 @@ HTMLTableOutput = HTMLTableOutput.replace(/%8/g, '8');
 HTMLTableOutput = HTMLTableOutput.replace(/%9/g, '9');
 HTMLTableOutput = HTMLTableOutput.replace(/%0/g, '0');
 HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, 'END');
-HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>END<\/td><\/tr>/g, '<\/table><div style=\"text-align: right\;font-size:10px">กลับต้น<\/div>');
+  // HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>END<\/td><\/tr>/g, '<\/table><div style=\"text-align: right\;font-size:10px">กลับต้น<\/div>');
+HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>END<\/td><\/tr>/g, '<tr><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"><small>กลับต้น</small></td></tr>');
 // HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, '</table><span style=\"text-align: right\">กลับต้น<\/span>');
 
 HTMLTableOutput = HTMLTableOutput.replace(/\<a\<\/td\>\<td\>/gm, '<a ');
