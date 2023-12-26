@@ -47,7 +47,7 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\_/g, '<span
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\o/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.6em; left: 50%; transform: translateX(-50%);\"><small>º</small></sub></span>');
 //เครื่องหมายพรม
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])t/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 70%; transform: translateX(-50%);\"><small>𝆱</small></sub></span>');
-//ตัวเลขแสดงตำแหน่งนิ้วซอ
+//ตัวเลขแสดงตำแหน่งนิ้วซอและจะเข้
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\([๑๒๓๔๕๖๗๘๙๐ชกน])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
 //ตัวเลขแสดงตำแหน่งนิ้วซอ เลขโรมัน
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>5</small></span>');
@@ -71,7 +71,8 @@ HTMLTableOutput = HTMLTableOutput.replace(/๐/g, '<span style="font-size:7px">0
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])v/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.3em; left: 50%; transform: translateX(-30%);\">𝆫</span>');
 //เครื่องหมายดีดออก
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ๑๒๓๔๕๖๗๘๙๐])\^/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.9em; left: 40%; transform: translateX(-5%);rotate: -180deg;\">𝆫</span>');
-
+//แปลงคำ next เป็น tag page เพื่อสร้าง page break สาหรับการพิมพ์
+HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>next<\/td><\/tr>/gm, "<page>")
 //การพิมพ์เลข
 HTMLTableOutput = HTMLTableOutput.replace(/%ด/g, '1');
 HTMLTableOutput = HTMLTableOutput.replace(/%ร/g, '2');
