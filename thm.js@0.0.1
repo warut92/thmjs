@@ -56,6 +56,10 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iii)/g
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(ii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>2</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(i)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>1</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(0)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>0</small></span>');
+//แสดงสายลวดจะเข้
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\([+])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
+
+
 //แปลงเลขไทยเป็นอาราบิก
 HTMLTableOutput = HTMLTableOutput.replace(/๑/g, '<span style="font-size:7px">1</span>');
 HTMLTableOutput = HTMLTableOutput.replace(/๒/g, '<span style="font-size:7px">2</span>');
