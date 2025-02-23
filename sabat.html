@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thm.js / JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว</title>
+    <link rel="stylesheet" href="thmjs.css">
+
+</head>
+<body>
+<div id="thm">
+(12)34 5654
+</div>
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <td><span class="sabat">1234</span></td>
+            <td><span class="sabat">5678</span></td>
+            <td>---<span class="sabat">123</span></td>
+        </tr>
+        <tr>
+            <td><span class="sabat">ABCD</span></td>
+            <td><span class="sabat">EFGH</span></td>
+            <td>-<span class="sabat">321</span>-<span class="sabat">216</span></td>
+        </tr>
+    </table>
+
+    <script>
+inputText = document.getElementById("thm").innerHTML;
+
+inputText = inputText.replace(/\(([.*)])\)/g,"gg")
+
+        console.log(inputText)
+        // ดึงข้อมูล class "sabat" ทั้งหมด
+        const sabats = document.querySelectorAll(".sabat");
+
+        // ลูป sabat เพื่อสร้างคุณลักษณะ
+        sabats.forEach(cell => {
+            // กำหนด position 
+            cell.style.position = "relative";
+
+            // สร้าง div สำหรับสร้างเส้นสะบัด ตั้งชื่อว่า curve
+            const curve = document.createElement("div");
+
+            // สร้างเส้นสะบัด
+            curve.style.position = "absolute";
+            curve.style.top = "-40%"; // ปรับค่าความสูงด้านบน
+            curve.style.left = "50%";
+            curve.style.width = "25px";  // ความกว้าง
+            curve.style.height = "20px"; // ความสูง
+            curve.style.borderTop = "2px solid black"; // ความหนา
+            curve.style.borderRadius = "50%"; // ความโค้ง
+            curve.style.transform = "translateX(-50%)"; // 
+
+            // ใส่ curve ต่อไปใน cell ซึ่งอยู่ใน class sabat
+            cell.prepend(curve);
+        });
+    </script>
+<script src="thm.js@0.0.1"></script>
+</body>
+</html>
