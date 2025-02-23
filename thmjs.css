@@ -23,3 +23,18 @@ table, th, td {
 .right {
 	  text-align: right;
 }
+
+small {
+	font-size: 80%;
+}
+
+pre {
+	font-size: 100%;
+	font-family: 'Tlwg Typist', monospace;
+	margin-left: 2%;
+	background-color: gainsboro;
+}
+
+.flex-container {
+	display: flex;
+  }

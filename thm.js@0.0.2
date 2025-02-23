@@ -1,3 +1,4 @@
+function thmConvert() {
 //get text from textarea
 let inputText = document.getElementById("thm").innerHTML;
 console.log(inputText);
@@ -14,7 +15,7 @@ for (let i = 0; i < newLineArrLen; i++) {
   HTMLTableOutput += "<tr><td>" + newLineArr[i] + "</td></tr>" + "\n";
 }
 //replace comma with table tag form
-HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>\(([^[ก-๙])]*)\)<\/td><\/tr>/g, '<a name=\"$1\">$1</a><table>');
+HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>\(([^ )]*)\)<\/td><\/tr>/g, '<a name=\"$1\">$1</a><table>');
 //ลบแท็กที่ไม่เกี่ยวข้องกับ <a>
 HTMLTableOutput = HTMLTableOutput.replace(/\<a\<\/td\>\<td\>/gm, '<a ');
 //แปลงตัวเลขเป็นตัวโน้ต
@@ -142,4 +143,6 @@ curve.style.transform = "translateX(-30%)"; //
 // ใส่ curve ต่อไปใน cell ซึ่งอยู่ใน class sabat
 cell.prepend(curve);
 });
+}
+thmConvert()
 

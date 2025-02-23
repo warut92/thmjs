@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground thm.js</title>
+    <link rel="stylesheet" href="thmjs.css">
+    <style>
+        #thm {
+            padding-left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Playground thm.js@0.0.2</h1>
+    <script src="thm.js@0.0.2"></script>
+    <div class="flex-container">
+        <div><textarea name="" id="thm_textarea" style="width: 200%;" rows="40" oninput="convert()"></textarea></div>
+        <div id="thm"></div>
+    </div>
+    <script>
+        let thm_textarea = document.getElementById('thm_textarea').value 
+        function convert() {
+            thm_textarea = document.getElementById('thm_textarea').value
+            document.getElementById('thm').innerHTML = thm_textarea
+            thmConvert();
+        }
+        thmConvert();
+
+        </script>
+</body>
+</html>
