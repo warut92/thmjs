@@ -39,7 +39,7 @@ HTMLTableOutput = HTMLTableOutput.replace(/\./g, 'ฺ');
 HTMLTableOutput = HTMLTableOutput.replace(/\\s/g, ' ');
 HTMLTableOutput = HTMLTableOutput.replace(/\_/g, ' ');
 //โน้ตตัวเล็ก >> สำหรับการวาดเส้นโค้งที่สื่อถึงการสะบัด
-HTMLTableOutput = HTMLTableOutput.replace(/\[(.*?)\]/g, '<small><span class="sabat">$1</span></small>');
+// HTMLTableOutput = HTMLTableOutput.replace(/\[(.*?)\]/g, '<small><span class="sabat">$1</span></small>');
 
 //คันชักออก
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํฺ])\{/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><</sub></span>');
