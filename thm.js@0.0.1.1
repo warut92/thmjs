@@ -65,13 +65,33 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])t/g, '<sp
 //ตัวเลขแสดงตำแหน่งนิ้วซอและจะเข้
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\([๑๒๓๔๕๖๗๘๙๐ชกน])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
 
-//ตัวเลขแสดงตำแหน่งนิ้วซอ เลขโรมัน
+//ตัวเลขแสดงตำแหน่งนิ้วซอ เลขโรมัน แสดงเลขด้านบน
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiiiiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>8</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiiiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>7</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>6</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>5</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>4</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(iii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>3</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(ii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>2</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(i)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>1</small></span>');
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\(0)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.86em; left: 50%; transform: translateX(-50%);\"><small>0</small></span>');
+
+//ตัวเลขแสดงตำแหน่งนิ้วซอ เลขโรมัน แสดงเลขด้านล่าง
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(iiiiiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>8</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(e)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>8</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(iiiiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>7</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(iiiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>6</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(iiiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>5</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(iiii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>4</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(f)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>4</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(iii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>3</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(ii)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>2</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(t)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>2</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(i)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>1</small></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/([+])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>+</small></span>');
+
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\/(\d)/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
+
 
 //แสดงสายลวดจะเข้+มือซ้ายขิม
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])\\([+])/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><small>$2</small></span>');
