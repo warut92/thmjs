@@ -19,6 +19,12 @@ HTMLTableOutput = HTMLTableOutput.replace(/\[(.*?)\]/g, '<small>$1</small>');
 
 //ลบแท็กที่ไม่เกี่ยวข้องกับ <a>
 HTMLTableOutput = HTMLTableOutput.replace(/\<a\<\/td\>\<td\>/gm, '<a ');
+
+// แก้ตำแหน่งของเลข 8 ที่แสดงด้านล่างตัวโน้ต
+HTMLTableOutput = HTMLTableOutput.replace(/8\/8/g, '1/8*');
+HTMLTableOutput = HTMLTableOutput.replace(/9\/8/g, '2/8*');
+HTMLTableOutput = HTMLTableOutput.replace(/3\*\/8/g, '3/8*');
+
 //ตัวแปลงเลขขั้นคู่ของโน้ตมือฆ้อง
 HTMLTableOutput = HTMLTableOutput.replace(/\/8/g, '/e');
 HTMLTableOutput = HTMLTableOutput.replace(/\/7/g, '/iiiiiiii');
@@ -28,6 +34,7 @@ HTMLTableOutput = HTMLTableOutput.replace(/\/4/g, '/f');
 HTMLTableOutput = HTMLTableOutput.replace(/\/3/g, '/iii');
 HTMLTableOutput = HTMLTableOutput.replace(/\/2/g, '/t');
 HTMLTableOutput = HTMLTableOutput.replace(/\/1/g, '/i');
+HTMLTableOutput = HTMLTableOutput.replace(/8/g, '1*');
 
 //แปลงตัวเลขเป็นตัวโน้ต
 HTMLTableOutput = HTMLTableOutput.replace(/ /g, "</td><td>");
