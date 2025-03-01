@@ -100,14 +100,12 @@ JavaScript สำหรับการแปลงโน้ตดนตรีไ
 -3/e*-2/e* -1/e*-6/f --[45]6 -1/e*-2/e* -5/f-1/e* -2/e*-3/e* -3/s*-3/e* -2/e*-1/e*
 //
 </div>
-<div>
-ตัวอย่างการเขียน
-<pre id="rawTxt"></pre>
+<pre id="raw"></pre>
 </div>
-</div>
+
+<script>
+document.getElementById('raw').innerHTML = thm.innerHTML
+</script>
 </body>
 <script src="thm.js@0.0.1"></script>
-<script>
-	document.getElementById("rawTxt").innerHTML = inputText
-</script>
 </html>

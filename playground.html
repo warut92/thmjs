@@ -13,21 +13,20 @@
 </head>
 <body>
     <h1>Playground thm.js@0.0.1</h1>
-JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเอง ใช้เอง
-    <script src="thm.js@0.0.1.1"></script>
-    <div class="flex-container">
-        <div><textarea name="" id="thm_textarea" style="width: 200%;" rows="40" oninput="convert()"></textarea></div>
-        <div id="thm"></div>
-    </div>
-    <script>
-        let thm_textarea = document.getElementById('thm_textarea').value 
-        function convert() {
-            thm_textarea = document.getElementById('thm_textarea').value
-            document.getElementById('thm').innerHTML = thm_textarea
-            thmConvert();
-        }
-        thmConvert();
-
-        </script>
+JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเอง ใช้เอง 
+<br><red>in progress!<progress></progress></red>
+<div class="flex-container">
+    <div><textarea name="" id="thm_textarea" style="width: 200%;" rows="40" oninput="convert()"></textarea></div>
+    <div id="thm"></div>
+</div>
+<script src="thm.js@0.0.1"></script>
+<script>
+    let thm_textarea = document.getElementById('thm_textarea').value 
+    function convert() {
+        thm_textarea = document.getElementById('thm_textarea').value
+        document.getElementById('thm').innerHTML = thm_textarea
+    }
+console.log(    document.getElementById('thm').innerHTML
+);    </script>
 </body>
 </html>
