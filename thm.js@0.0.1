@@ -14,7 +14,9 @@ for (let i = 0; i < newLineArrLen; i++) {
   HTMLTableOutput += "<tr><td>" + newLineArr[i] + "</td></tr>" + "\n";
 }
 //replace comma with table tag form
+//ชื่อเพลงและ a tag
 HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>\(([^ )]*)\)<\/td><\/tr>/g, '<a name=\"$1\">$1</a><table>');
+//ข้อความแสดงท่อนหรือข้อความอื่น
 HTMLTableOutput = HTMLTableOutput.replace(/\[(.*?)\]/g, '<small>$1</small>');
 
 //ลบแท็กที่ไม่เกี่ยวข้องกับ <a>
@@ -26,10 +28,14 @@ HTMLTableOutput = HTMLTableOutput.replace(/9\/8/g, '2/8*');
 HTMLTableOutput = HTMLTableOutput.replace(/3\*\/8/g, '3/8*');
 
 //ตัวแปลงเลขขั้นคู่ของโน้ตมือฆ้อง
+//
+HTMLTableOutput = HTMLTableOutput.replace(/\$/g, '/e');
 HTMLTableOutput = HTMLTableOutput.replace(/\/8/g, '/e');
 HTMLTableOutput = HTMLTableOutput.replace(/\/7/g, '/iiiiiiii');
 HTMLTableOutput = HTMLTableOutput.replace(/\/6/g, '/s');
 HTMLTableOutput = HTMLTableOutput.replace(/\/5/g, '/iiiii');
+//
+HTMLTableOutput = HTMLTableOutput.replace(/f/g, '/f');
 HTMLTableOutput = HTMLTableOutput.replace(/\/4/g, '/f');
 HTMLTableOutput = HTMLTableOutput.replace(/\/3/g, '/iii');
 HTMLTableOutput = HTMLTableOutput.replace(/\/2/g, '/t');
@@ -137,10 +143,9 @@ HTMLTableOutput = HTMLTableOutput.replace(/%8/g, '8');
 HTMLTableOutput = HTMLTableOutput.replace(/%9/g, '9');
 HTMLTableOutput = HTMLTableOutput.replace(/%0/g, '0');
 //ใส่ข้อความกลับต้น
-HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, 'END');
-  // HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>END<\/td><\/tr>/g, '<\/table><div style=\"text-align: right\;font-size:10px">กลับต้น<\/div>');
-HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>END<\/td><\/tr>/g, '<tr><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"><small>กลับต้น</small></td></tr>');
-// HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, '</table><span style=\"text-align: right\">กลับต้น<\/span>');
+HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, 'repeat');
+; HTMLTableOutput = HTMLTableOutput.replace(/<tr><td>repeat<\/td><\/tr>/g, '<tr><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"> </td><td style=\"border-bottom: hidden;border-left: hidden;border-right: hidden\"><small>กลับต้น</small></td></tr>');
+
 
 HTMLTableOutput = HTMLTableOutput.replace(/\<a\<\/td\>\<td\>/gm, '<a ');
 
