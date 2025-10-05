@@ -10,5 +10,7 @@ Ex. code [LINK](https://raw.githubusercontent.com/warut92/thmjs/refs/heads/main/
 
 ดูตัวอย่าง [LINK](https://warut92.github.io/thmjs)
 
+ทดลองพิมพ์ [LINK](https://warut92.github.io/thmjs/playground.html)
+
 ### JavaScript
 [https://warut92.github.io/thmjs/thm.js](https://warut92.github.io/thmjs/thm.js@0.0.1)

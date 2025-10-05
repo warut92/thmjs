@@ -1,5 +1,6 @@
+function convert() {
 //get text from textarea
-let inputText = document.getElementById("thm").innerHTML;
+let inputText = document.getElementById("thm_textarea").value;
 console.log(inputText);
 
 //splite new line by regex
@@ -181,3 +182,7 @@ curve.style.transform = "translateX(-30%)"; //
 // ใส่ curve ต่อไปใน cell ซึ่งอยู่ใน class sabat
 cell.prepend(curve);
 });
+
+}
+
+convert()

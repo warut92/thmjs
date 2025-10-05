@@ -6,27 +6,35 @@
     <title>Playground thm.js</title>
     <link rel="stylesheet" href="thmjs.css">
     <style>
-        #thm {
-            padding-left: 25%;
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-container > div {
+            width: 50px;
+            margin: 10px;
+            width: 100%;
+        }
+        .raw {
+            background-color: wheat;
+        }
+        .converted{
+            background-color: gray;
         }
     </style>
 </head>
 <body>
     <h1>Playground thm.js@0.0.1</h1>
-JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเอง ใช้เอง 
-<br><red>in progress!<progress></progress></red>
+JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเอง ใช้เอง <a href="index.html">กลับหน้าหลัก</a>
+<!-- <br><red>in progress!<progress></progress></red> -->
+<script src="playground_thm.js@0.0.1"></script>
 <div class="flex-container">
-    <div><textarea name="" id="thm_textarea" style="width: 200%;" rows="40" oninput="convert()"></textarea></div>
-    <div id="thm"></div>
+    <div><textarea class="raw" name="" id="thm_textarea" style="width: 100%;" rows="40" oninput="convert()"></textarea></div>
+    <div class="converted" id="thm"></div>
+    <script>
+        convert()
+    </script>
 </div>
-<script src="thm.js@0.0.1"></script>
-<script>
-    let thm_textarea = document.getElementById('thm_textarea').value 
-    function convert() {
-        thm_textarea = document.getElementById('thm_textarea').value
-        document.getElementById('thm').innerHTML = thm_textarea
-    }
-console.log(    document.getElementById('thm').innerHTML
-);    </script>
+
 </body>
 </html>
