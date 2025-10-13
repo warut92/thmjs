@@ -1,0 +1,58 @@
+function convert() {
+//get text from textarea
+let input = document.getElementById("thm_textarea").value;
+
+// const input = `-6.66 -6.66 -5.55 -7.33 -5/4-1/8 -2/8-3/8 -3/6-3/8 -2/8-1/8
+// -3/8-2/8 -1/8-6/4 -456 -1/8-2/8 -5/4-1/8 -2/8-3/8 -3/6-3/8 -2/8-1/8
+// 865+3+
+// ` ;
+// -3/8*-2/8* -1/8*-6/4 -456 -1/8*-2/8* -5/4-1/8* -2/8*-3/8* -3/6*-3/8* -2/8*-1/8*
+
+// split into groups
+const groups = input.split(" ");
+
+// first line (replace + with --, remove / and numbers after it)
+const topLine = groups.map(g => 
+  //โน้ตมือบน -xxx ต่ำ ซ้าย ขวา ขวา
+  g.replace(/\d\./g, "-")
+  //โน้ตสบัดขึ้น -xxx
+  .replace(/-(\d)(\d)(\d)/g, "--$2$3")
+  //โน้ตสบัดลง -xxx
+  .replace(/-(\d)\+(\d)(\d)/g, "-$1--")
+  //โน้ตคู่ -x-x
+  .replace(/-(\d)\/(\d)-(\d)\/(\d)/g, "-$1-$3")
+  //แบบ xxxx 22 มือบน
+  .replace(/(\d)(\d)(\d)\+(\d)\+/g, "$1$2--")
+
+).join(" ");
+
+// second line (remove +, replace / with -)
+const bottomLine = groups.map(g =>
+  //โน้ตต่ำ ซ้าย ขวา ขวา
+  g.replace(/\.\d{2}/g, '.--')
+  //โน้ตสบัดขึ้น -xxx
+  .replace(/-(\d)(\d)(\d)/g, "-$1--")
+  //โน้ตสบัดลง -xxx
+  .replace(/-(\d)\+(\d)(\d)/g, "--$2$3")
+  //โน้ตคู่ -x-x
+  .replace(/-(\d)\/(\d)-(\d)\/(\d)/g, "-$2-$4")
+    //แบบ xxxx 22 มือล่าง
+  .replace(/(\d)(\d)(\d)\+(\d)\+/g, "--$3$4")
+
+
+).join(" ");
+
+console.log("บน", topLine);
+console.log("ล่าง",bottomLine); // add br for bottom
+const TOPLINE = topLine.split('\n')
+const BOTTOMLINE = bottomLine.split('\n')
+
+const BOTTOMLINExNEWLINE = BOTTOMLINE.map(x => x + "\n")
+const element = TOPLINE.map((num, i) => [num, BOTTOMLINExNEWLINE[i]])
+let rearange_note = element.toString().replace(/,/g,"\n")
+document.getElementById('thm_num').innerText = rearange_note
+}
+
+convert()
+
+

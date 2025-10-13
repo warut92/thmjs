@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground thm.js</title>
+    <link rel="stylesheet" href="thmjs.css">
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-container > div {
+            width: 50px;
+            margin: 10px;
+            width: 100%;
+        }
+        .raw {
+            background-color: wheat;
+        }
+        .converted {
+            background-color: gray;
+            font-size: 13px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Playground thm.js@0.0.2</h1>
+JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเอง ใช้เอง <a href="index.html">กลับหน้าหลัก</a>
+<!-- <br><red>in progress!<progress></progress></red> -->
+<script src="playground_thm.js@0.0.2"></script>
+<div class="flex-container">
+    <div><textarea class="raw" name="" id="thm_textarea" style="width: 100%;" rows="40" oninput="convert()"></textarea></div>
+    <div class="converted" id="thm_num"></div>
+    <script>
+        convert()
+    </script>
+</div>
+
+</body>
+</html>
