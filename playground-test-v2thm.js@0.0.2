@@ -1,0 +1,173 @@
+function convert() {
+//get text from textarea
+let input = document.getElementById("thm_textarea").value;
+
+//เปลี่ยนโน้ตคู่
+input = input
+ //คู่ 4
+.replace(/8\/4/g,"8/5")
+.replace(/1\*\/4/g,"8/5")
+.replace(/7\/4/g,"7/7")
+.replace(/6\/4/g,"6/3")
+.replace(/5\/4/g,"5/2")
+.replace(/4\/4/g,"4/1")
+.replace(/3\/4/g,"3/7.")
+.replace(/2\/4/g,"2/6.")
+.replace(/1\/4/g,"1/5.")
+//คู่ 8
+.replace(/3\*\/8/g,"3*/3") 
+.replace(/9\/8/g,"9/2") 
+.replace(/2\*\/8/g,"2*/2") 
+.replace(/8\/8/g,"8/1") 
+.replace(/1\*\/8/g,"8/1") 
+.replace(/7\/8/g,"7/7.") 
+.replace(/6\/8/g,"6/6.") 
+.replace(/5\/8/g,"5/5.") 
+.replace(/4\/8/g,"4/4.") 
+.replace(/3\/8/g,"3/3.") 
+.replace(/\*\/8/g,"/1")
+// //คู่ 3*
+.replace(/3\*\/5/g,"3*/6")
+.replace(/3\*\/6/g,"3*/5") 
+//คู่ 6
+.replace(/6\/5/g,"6/2") 
+.replace(/6\/4/g,"6/3") 
+console.log(input);
+// split into groups
+const groups = input.split(" ");
+console.log(groups);
+const topLine = groups.map(g => 
+  g
+  //---x+
+  .replace(/---(\d)/g, "----")
+  //---x/8
+  .replace(/---(\d)\/(\d)(\.)/g, "---$1")
+  //---x./8
+  .replace(/---(\d)\.\/(\d)/g, "---$1")
+  //-x/6--
+  .replace(/-(\d)\*\/(\d)--/g, "-$1*--")
+
+  //-x.xx 
+  .replace(/-(\d)\.(\d)(\d)/g, "-$1.--")
+  //-xx+x+
+  .replace(/-(\d)(\d)(\d)/g, "--$2$3")
+  //-x.xx/8
+  .replace(/--(\d)(\d)\/-/g, "--$1$2")
+  //-x+xx
+  .replace(/-(\d)\+(\d)(\d)/g, "-$1--")
+  //-xx+x
+  .replace(/-(\d)(\d)\+(\d)/g, "--$2-")
+  //แบบ xx-x/4
+  .replace(/(\d)(\d)-(\d)\/(\d)/g, "---$3")
+  .replace(/(\d)(\d)-(\d)\/-/g, "---$3")
+  //xx-x.
+  .replace(/(\d)(\d)-(\d)\./g, "$1$2--")
+  
+  //-x/8-x/8
+  .replace(/-(\d)\/(\d)-(\d)\/(\d)/g, "-$1-$3")
+  .replace(/-(\d)\/(\d)-(\d)\/-/g, "-$1-$3")
+  //-x-x
+  .replace(/-(\d)\/(\d)-(\d)\/(\d)/g, "-$1-$2")
+  .replace(/-(\d)\/(\d)\.-(\d)\/(\d)\./g, "-$1-$2")
+  //-x/8-x.+
+  .replace(/-(\d)\/(\d)-(\d)\./g, "-$1--")
+  //-x*-x*
+  .replace(/-(\d)\*\/(\d)-(\d)\*\/(\d)/g, "-$1*-$3*")
+  //--xx
+  .replace(/--(\d)\/(\d)(\d)\/(\d)/g, "--$1$3")
+  .replace(/--(\d)\/(\d)(\d)\/-/g, "--$1$3")
+  //--x+x+
+  .replace(/--(\d)\+(\d)\+/g, "--$1$2")
+  //-x.xx/8
+  .replace(/-(\d)\.--\/(\d)\./g, "--$1$2")
+
+  //xxx+x+
+  .replace(/(\d)(\d)(\d)\+(\d)\+/g, "--$3$4")
+  //x+xxx+
+  .replace(/(\d)\+(\d)\+(\d)\+(\d)/g, "$1$2$3-")
+  //xxx+x+
+  .replace(/(\d)\+(\d)\+(\d)(\d)/g, "$1$2--")
+  //xxxx/x
+  .replace(/(\d)(\d)(\d)(\d)\/(\d)/g, "$1$2$3$4")
+  //xx+xx/x
+  .replace(/(\d)(\d)\+(\d)(\d)\/(\d)\./g, "-$2-$4")
+  //x+x+xx/8
+  .replace(/(\d)\+(\d)\+(\d)-\/(\d)/g, "$1$2-$4")
+
+  .replace(/\(([^ )]*)\)/g, '($1)')
+).join(" ");
+
+// second line (remove +, replace / with -)
+const bottomLine = groups.map(g =>
+  g
+  //---x+
+  //ไม่ได้ทำอะไร ให้โน้ตปรากฏบรรทัดล่างตามปกติ
+
+  //---x./8
+  .replace(/---(\d)\/(\d)/g, "---$2")
+  // ---x./8
+  .replace(/---(\d)\.\/(\d)/g, "---$2")
+  //-x.xx
+  .replace(/-(\d)\.(\d)(\d)/g, "-$1.--")
+  //-x.xx/d
+  .replace(/-(\d)\.(\d)(\d)\/(\d)/g, "-$1.-$4")
+  //-x/d--
+  .replace(/-(\d)\*\/(\d)--/g, "-$2--")
+  //โน้ตสบัดขึ้น -xxx
+  .replace(/-(\d)(\d)(\d)/g, "-$1--")
+  //โน้ตสบัดลง -xxx
+  .replace(/-(\d)\+(\d)(\d)/g, "--$2$3")
+  //โน้ต3ตัวสับ -xx+x
+  .replace(/-(\d)(\d)\+(\d)/g, "-$1-$3")
+  //-x.xx/8
+  .replace(/-(\d)\.--\/(\d)\./g, "-$1.-$2")
+
+  //โน้ตคู่ -x-x
+  .replace(/-(\d)\/(\d)-(\d)\/(\d)/g, "-$2-$4")
+  //โน้ตคู่ -x*-x* สำหรับต่ำ
+  .replace(/-(\d)\*-(\d)\*/g, "-$1-$2")
+  .replace(/-(\d)\*\/(\d)-(\d)\*\/(\d)/g, "-$2-$4")
+  //-x/8-x.+
+  .replace(/-(\d)\/(\d)-(\d)\./g, "-$2-$3.")
+
+  .replace(/-(\d)\/(\d)(\.|\*)-(\d)\/(\d)(\.|\*)/g, "-$2$3-$5$6")
+  //--xx
+  .replace(/--(\d)\/(\d)(\d)\/(\d)/g, "--$2$4")
+  //--x+x+
+  .replace(/--(\d)\+(\d)\+/g, "----")
+
+  //xx-x.
+  .replace(/(\d)(\d)-(\d)\./g, "---$3.")
+    //แบบ xx-x/4
+    .replace(/(\d)(\d)-(\d)\/(\d)/g, "$1$2-$4")
+
+  //แบบ xxxx 22 มือล่าง
+  .replace(/(\d)(\d)(\d)\+(\d)\+/g, "$1$2--")
+  //x+x+x+x
+  .replace(/(\d)\+(\d)\+(\d)\+(\d)/g, "---$4")
+  //x+x+xx
+  .replace(/(\d)\+(\d)\+(\d)(\d)/g, "--$3$4")
+  //xxxx/8
+  .replace(/(\d)(\d)(\d)(\d)\/(\d)/g, "---$5")
+  //xx+xx/8
+  .replace(/(\d)(\d)\+(\d)(\d)\/(\d)/g, "$1-$3$5")  
+
+
+
+  .replace(/\(([^ )]*)\)/g, '')
+).join(" ");
+
+console.log("บน", topLine);
+console.log("ล่าง",bottomLine); // add br for bottom
+const TOPLINE = topLine.split('\n')
+const BOTTOMLINE = bottomLine.split('\n')
+
+const BOTTOMLINExNEWLINE = BOTTOMLINE.map(x => x + "\n")
+const element = TOPLINE.map((num, i) => [num, BOTTOMLINExNEWLINE[i]])
+let rearange_note = element.toString().replace(/,/g,"\n")
+document.getElementById('thm_num').innerText = rearange_note
+}
+
+convert()
+
+
