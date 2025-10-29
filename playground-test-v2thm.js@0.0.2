@@ -1,8 +1,8 @@
 function convert() {
-//get text from textarea
+//นำอักขะมาจาก textarea
 let input = document.getElementById("thm_textarea").value;
 
-//เปลี่ยนโน้ตคู่
+//เปลี่ยนโน้ตคู่ เนื่องจาก หลังเครื่องหมายทับ เป็นการแสดงโน้ตคู่ ไม่ใช่ตัวโน้ตในคู่นั้น
 input = input
  //คู่ 4
 .replace(/8\/4/g,"8/5")
@@ -32,8 +32,8 @@ input = input
 //คู่ 6
 .replace(/6\/5/g,"6/2") 
 .replace(/6\/4/g,"6/3") 
-console.log(input);
-// split into groups
+console.log("input",input);
+// เมื่อได้โน้ตออกมา จะเป็นโน้ตในลักษณะ 2 บรรทัด
 const groups = input.split(" ");
 console.log(groups);
 const topLine = groups.map(g => 
@@ -48,7 +48,7 @@ const topLine = groups.map(g =>
   .replace(/-(\d)\*\/(\d)--/g, "-$1*--")
 
   //-x.xx 
-  .replace(/-(\d)\.(\d)(\d)/g, "-$1.--")
+  .replace(/-(\d)\.(\d)(\d)/g, "--$2$3")
   //-xx+x+
   .replace(/-(\d)(\d)(\d)/g, "--$2$3")
   //-x.xx/8
@@ -68,7 +68,7 @@ const topLine = groups.map(g =>
   .replace(/-(\d)\/(\d)-(\d)\/-/g, "-$1-$3")
   //-x-x
   .replace(/-(\d)\/(\d)-(\d)\/(\d)/g, "-$1-$2")
-  .replace(/-(\d)\/(\d)\.-(\d)\/(\d)\./g, "-$1-$2")
+  .replace(/-(\d)\/(\d)\.-(\d)\/(\d)\./g, "-$1-$3")
   //-x/8-x.+
   .replace(/-(\d)\/(\d)-(\d)\./g, "-$1--")
   //-x*-x*
