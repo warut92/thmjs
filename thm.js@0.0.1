@@ -148,8 +148,8 @@ HTMLTableOutput = HTMLTableOutput.replace(/\/\//g, 'repeat');
 
 
 HTMLTableOutput = HTMLTableOutput.replace(/\<a\<\/td\>\<td\>/gm, '<a ');
-
-HTMLTableOutput = HTMLTableOutput.replace(/<tr><td><\/td><\/tr>/g, '<\/table><br><table>');
+//ลบ br
+HTMLTableOutput = HTMLTableOutput.replace(/<tr><td><\/td><\/tr>/g, '<\/table><table>');
 console.log('HTMLTABLEOUTPUT', HTMLTableOutput)
 
 if (HTMLTableOutput !== "<tr><td></td></tr>\n") {
