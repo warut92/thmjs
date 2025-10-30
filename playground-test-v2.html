@@ -34,8 +34,34 @@
 JavaScript สำหรับการแปลงโน้ตดนตรีไทย สะดวก รวดเร็ว ทำเอง ใช้เอง <a href="index.html">กลับหน้าหลัก</a>
 <!-- <br><red>in progress!<progress></progress></red> -->
 <script src="playground-test-v2thm.js@0.0.2"></script>
-<script src="playground-test-v2thm.js@0.0.1"></script>
-
+<script src="playground-test-v2thm.js@0.0.1"></script><br>
+    <input id="inputText" type="text" placeholder="ตัวสร้างรูปแบบ">
+    <div class="output" id="outputText">Regex จะปรากฏที่นี่</div>
+  <script>
+  const input = document.getElementById('inputText');
+  const output = document.getElementById('outputText');
+  
+  input.addEventListener('input', () => {
+    const text = input.value;
+    let regexPattern = '';
+  
+    for (let ch of text) {
+      if (/\d/.test(ch)) {
+        regexPattern += '(\\d)';
+      } else if (ch === '.') {
+        regexPattern += '\\.';
+      } else if (ch === '*') {
+        regexPattern += '\\*';
+      } else if (ch === '/') {
+        regexPattern += '\\/';
+      } else {
+        regexPattern += ch;
+      }
+    }
+  
+    output.textContent = regexPattern || 'Regex pattern will appear here';
+  });
+  </script>
 <div class="flex-container">
     <div>
         <div class=".flex-container2">

@@ -120,6 +120,7 @@ const bottomLine = groups.map(g =>
   .replace(/-(\d)\+(\d)(\d)/g, "--$2$3")   //โน้ตสบัดลง -xxx
   .replace(/-(\d)(\d)\+(\d)/g, "-$1-$3")   //โน้ต3ตัวสับ -xx+x
   .replace(/-(\d)\.--\/(\d)\./g, "-$1.-$2")   //-x.xx/8
+  .replace(/(\d)(\d)-(\d)\/(\d)/g, "---$3")    //xx-x
   .replace(/(\d)(\d)-(\d)/g, "---$3")    //xx-x
   .replace(/(\d)(\d)-(\d)\./g, "---$3.")   //xx-x.
   .replace(/(\d)\*(\d)\*-(\d)/g, "---$3")    //x*x*-x
