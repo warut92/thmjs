@@ -76,7 +76,7 @@ HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํฺ])\}/g, 
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\+/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 50%; transform: translateX(-50%);\">+</sub></span>');
 
 //เครื่อหมายโน้ตลบ
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\_/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 50%; transform: translateX(-50%);\">-</sub></span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\=/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.7em; left: 50%; transform: translateX(-50%);\">-</sub></span>');
 
 //เครื่องหมายโน้ตกลาง
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลท])\o/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.6em; left: 50%; transform: translateX(-50%);\"><small>º</small></sub></span>');
