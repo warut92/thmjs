@@ -64,7 +64,7 @@ HTMLTableOutput = HTMLTableOutput.replace(/\./g, 'ฺ');
 HTMLTableOutput = HTMLTableOutput.replace(/\\s/g, ' ');
 HTMLTableOutput = HTMLTableOutput.replace(/\_/g, ' ');
 //โน้ตตัวเล็ก >> สำหรับการวาดเส้นโค้งที่สื่อถึงการสะบัด
-HTMLTableOutput = HTMLTableOutput.replace(/<small>([ดรมฟซลทํฺ]{1,5})<\/small>/g, '<small><span class="sabat">$1</span></small>');
+HTMLTableOutput = HTMLTableOutput.replace(/<small>([ดรมฟซลทํฺv]{1,5})<\/small>/g, '<small><span class="sabat">$1</span></small>');
 
 //คันชักออก
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํฺ])\{/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: -0.5em; left: 50%; transform: translateX(-50%);\"><</sub></span>');
@@ -126,7 +126,7 @@ HTMLTableOutput = HTMLTableOutput.replace(/๘/g, '<span style="font-size:7px">8
 HTMLTableOutput = HTMLTableOutput.replace(/๙/g, '<span style="font-size:7px">9</span>');
 HTMLTableOutput = HTMLTableOutput.replace(/๐/g, '<span style="font-size:7px">0</span>');
 //เครื่องหมายดีดเข้า
-HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])v/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.3em; left: 50%; transform: translateX(-30%);\">𝆫</span>');
+HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ])v/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.6em; left: 50%; transform: translateX(-30%);\">𝆫</span>');
 //เครื่องหมายดีดออก
 HTMLTableOutput = HTMLTableOutput.replace(/([ดรมฟซลทํ๑๒๓๔๕๖๗๘๙๐])\^/g, '<span style=\"display: inline-block; position: relative;\">$1<sub style=\"position: absolute; bottom: 0.9em; left: 40%; transform: translateX(-5%);rotate: -180deg;\">𝆫</span>');
 //แปลงคำ next เป็น tag page เพื่อสร้าง page break สาหรับการพิมพ์
